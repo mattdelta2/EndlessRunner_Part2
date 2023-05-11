@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
 
     public float moveSpeed =3;
-    public float jumpForce;
+    public float jumpForce =5;
 
     public float leftRightSpeed = 4;
     
@@ -34,6 +34,11 @@ public class PlayerMove : MonoBehaviour
             {
                 transform.Translate(Vector3.right * Time.deltaTime * leftRightSpeed);
             }
+        }
+
+        if(Input.GetKey(KeyCode.Space ) || Input.GetKey(KeyCode.UpArrow ))
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
         }
         
     }
