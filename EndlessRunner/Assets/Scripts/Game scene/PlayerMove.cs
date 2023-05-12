@@ -9,36 +9,43 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce =5;
 
     public float leftRightSpeed = 4;
-    
+
+    static public bool canMove = true;
+
+
+
 
 
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
-
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (canMove == true)
         {
 
-            if (this.gameObject.transform.position.x > LevelBoundry.leftSide)
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
+
+                if (this.gameObject.transform.position.x > LevelBoundry.leftSide)
+                {
+                    transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
+                }
+
             }
-            
-        }
 
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            if (this.gameObject.transform.position.x < LevelBoundry.rightSide)
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Translate(Vector3.right * Time.deltaTime * leftRightSpeed);
+                if (this.gameObject.transform.position.x < LevelBoundry.rightSide)
+                {
+                    transform.Translate(Vector3.right * Time.deltaTime * leftRightSpeed);
+                }
             }
-        }
 
-        if(Input.GetKey(KeyCode.Space ) || Input.GetKey(KeyCode.UpArrow ))
-        {
-            transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
+            }
         }
         
     }
