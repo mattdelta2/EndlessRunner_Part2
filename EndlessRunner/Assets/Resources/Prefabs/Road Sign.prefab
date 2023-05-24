@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9036019868367670616}
   - component: {fileID: 2525649095783041753}
   - component: {fileID: 6009748806152649227}
+  - component: {fileID: 17363520062153688}
   m_Layer: 0
   m_Name: Road Sign
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6487321401599446419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 1.07, z: 19.57}
-  m_LocalScale: {x: 0.90277, y: 0.802391, z: 0.90277}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1, y: 0.99, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7612043974487192489}
@@ -93,11 +94,28 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6487321401599446419}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0841452, y: 1.2410061, z: 1}
   m_Center: {x: -0.006524163, y: -0.016943539, z: 0}
+--- !u!114 &17363520062153688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6487321401599446419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a328a0fc2fe663d4bb9d01939e6b07b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 5953402506148401456, guid: 5058b96f4cccad945bd13d0c11b65b76, type: 3}
+  CharModel: {fileID: 0}
+  Thud: {fileID: 3595079636397569354, guid: 9e879293790f3eb43a81ae503ace3a47, type: 3}
+  mainCamera: {fileID: 0}
+  LevelControl: {fileID: 0}
 --- !u!1001 &7938105441786745922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4772c411acd7f7744ab9f86c72b83259, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.612
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4772c411acd7f7744ab9f86c72b83259, type: 3}
       propertyPath: m_LocalPosition.z
@@ -171,6 +189,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4772c411acd7f7744ab9f86c72b83259, type: 3}
+--- !u!1 &7127149847937181971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4772c411acd7f7744ab9f86c72b83259, type: 3}
+  m_PrefabInstance: {fileID: 7938105441786745922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2434724459354673668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127149847937181971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.084958866, y: 0.09963119, z: 0.05}
+  m_Center: {x: 0.0019748926, y: 0.04505359, z: 0}
 --- !u!4 &7612043974487192489 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4772c411acd7f7744ab9f86c72b83259, type: 3}

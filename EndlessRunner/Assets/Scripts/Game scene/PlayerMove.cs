@@ -10,8 +10,8 @@ public class PlayerMove : MonoBehaviour
 
     public float leftRightSpeed = 4;
 
-    public bool isJumping =false;
-    public bool ComingDown = false;
+    private bool isJumping =false;
+    private bool ComingDown = false;
     
 
     public GameObject PlayerObject;
