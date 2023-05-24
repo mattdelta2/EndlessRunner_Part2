@@ -14,6 +14,7 @@ public class GroundTile : MonoBehaviour
         SpawnObsticle();
 
         spawnCoins();
+        SpawnPowerUps();
         
     }
 
@@ -67,8 +68,28 @@ public class GroundTile : MonoBehaviour
 
             temp.transform.position = getRandomPointInCollider(GetComponent<Collider>());
 
+            
+
 
         }
+    }
+
+    public GameObject[] PowerUps;
+
+
+    public void SpawnPowerUps()
+    {
+        int PowerUpIndex = Random.Range(0, 2);
+        int powerUpToSpawn = 1;
+
+        for (int i = 0; i < powerUpToSpawn; i++)
+        {
+            GameObject temp = (Instantiate(PowerUps[PowerUpIndex], transform));
+
+            temp.transform.position = getRandomPointInCollider(GetComponent<Collider>());
+
+        }
+
     }
 
     Vector3 getRandomPointInCollider(Collider collider)

@@ -19,6 +19,8 @@ public class GroundSpawner : MonoBehaviour
             temp.GetComponent<GroundTile>().SpawnObsticle();
 
             temp.GetComponent<GroundTile>().spawnCoins();
+
+            temp.GetComponent<GroundTile>().SpawnPowerUps();
         }
     }
     void Start()
