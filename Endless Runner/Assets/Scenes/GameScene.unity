@@ -514,6 +514,11 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 1883493107}
   horizontalMultiplier: 2
+  speedIncreasePerPoint: 0.5
+  JumpForce: 600
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2012573334
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2012573336}
-  score: 0
+  playerMovement: {fileID: 1883493112}
 --- !u!4 &2093147040
 Transform:
   m_ObjectHideFlags: 0
