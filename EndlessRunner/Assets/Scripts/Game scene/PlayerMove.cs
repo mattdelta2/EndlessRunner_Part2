@@ -11,12 +11,15 @@ public class PlayerMove : MonoBehaviour
     public float leftRightSpeed = 4;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private bool isJumping =false;
     private bool ComingDown = false;
     
 
     public GameObject PlayerObject;
 
+=======
+>>>>>>> parent of 9c7e867 (Removing run over sections)
 =======
 >>>>>>> parent of 9c7e867 (Removing run over sections)
     static public bool canMove = true;

@@ -285,8 +285,12 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 5
 <<<<<<< HEAD
+<<<<<<< HEAD
   leftRightSpeed: 6
   PlayerObject: {fileID: 2061459132}
+=======
+  leftRightSpeed: 4
+>>>>>>> parent of 9c7e867 (Removing run over sections)
 =======
   leftRightSpeed: 4
 >>>>>>> parent of 9c7e867 (Removing run over sections)
@@ -2808,6 +2812,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 9c7e867 (Removing run over sections)
+=======
 >>>>>>> parent of 9c7e867 (Removing run over sections)
 --- !u!1 &1081701701
 GameObject:
@@ -3396,6 +3403,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 9c7e867 (Removing run over sections)
+=======
 >>>>>>> parent of 9c7e867 (Removing run over sections)
 --- !u!1 &1226517449
 GameObject:
@@ -3755,6 +3765,7 @@ Transform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1361138104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,6 +3861,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 1361138104}
   m_CullTransparentMesh: 1
 =======
+=======
+>>>>>>> parent of 9c7e867 (Removing run over sections)
 --- !u!4 &1370298920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6569620024905388659, guid: 0dab682290e3dcd48b5196b5fb0689c0, type: 3}
