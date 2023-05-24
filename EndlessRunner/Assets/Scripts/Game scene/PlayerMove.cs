@@ -5,17 +5,20 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    public float moveSpeed =10;
-    public float jumpForce =7;
+    public float moveSpeed =3;
+    public float jumpForce =5;
 
     public float leftRightSpeed = 4;
 
+<<<<<<< HEAD
     private bool isJumping =false;
     private bool ComingDown = false;
     
 
     public GameObject PlayerObject;
 
+=======
+>>>>>>> parent of 9c7e867 (Removing run over sections)
     static public bool canMove = true;
 
 
@@ -48,50 +51,12 @@ public class PlayerMove : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
             {
-                if(isJumping == false) 
-                {
-                    isJumping =true;
-                    PlayerObject.GetComponent<Animator>().Play("Jump");
-                    StartCoroutine(JumpSequence());
-                }
-                
+                transform.Translate(Vector3.up * Time.deltaTime * jumpForce);
             }
         }
-
-
-
-        if(isJumping == true)
-        {
-            if(ComingDown == false)
-            {
-                transform.Translate(Vector3.up * Time.deltaTime * jumpForce, Space.World);
-            }
-
-            if (ComingDown == true)
-            {
-                transform.Translate(Vector3.up * Time.deltaTime * -jumpForce, Space.World);
-            }
-        }
-
         
-    }
-
-
-    IEnumerator JumpSequence()
-    {
-        yield return new WaitForSeconds(0.45f);
-
-        ComingDown = true;
-
-        yield return new WaitForSeconds(0.45f);
-
-
-        isJumping = false;
-        ComingDown=false;
-
-        PlayerObject.GetComponent<Animator>().Play("Standard Run");
     }
 
 }
