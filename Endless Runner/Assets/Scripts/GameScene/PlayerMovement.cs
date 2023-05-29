@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float horizontalMultiplier = 2;
 
-    public float speedIncreasePerPoint = 0.1f;
+    public float speedIncreasePerPoint = 0.1f; //part of boss mechanics (makes game harder)
 
     public  float JumpForce = 10f;
     [SerializeField] LayerMask groundMask;
