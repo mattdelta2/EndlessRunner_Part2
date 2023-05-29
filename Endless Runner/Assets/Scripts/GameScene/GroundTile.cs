@@ -74,7 +74,7 @@ public class GroundTile : MonoBehaviour
         }
     }
 
-    public GameObject[] PowerUps;
+    public GameObject PowerUps;
 
 
     public void SpawnPowerUps()
@@ -84,7 +84,7 @@ public class GroundTile : MonoBehaviour
 
         for (int i = 0; i < powerUpToSpawn; i++)
         {
-            GameObject temp = (Instantiate(PowerUps[PowerUpIndex], transform));
+            GameObject temp = (Instantiate(PowerUps, transform));
 
             temp.transform.position = getRandomPointInCollider(GetComponent<Collider>());
 

@@ -296,9 +296,7 @@ MonoBehaviour:
   tallObsticleChance: 0.2
   obsticlePrefab: {fileID: 1677921020075253849, guid: b23ee4b15f657e741a615649485d57b1, type: 3}
   coinPrefab: {fileID: 3132902378477571847, guid: f340eacc8f331ad41b30594d230a51b4, type: 3}
-  PowerUps:
-  - {fileID: 6166310931287244127, guid: d5b17582e3b9589478faf749ed1194d3, type: 3}
-  - {fileID: 1065915248754319843, guid: 21c180d27a4078649904a131d71fda33, type: 3}
+  PowerUps: {fileID: 3132902378477571847, guid: 7e454fb37262fad4c834c57d377f2ecc, type: 3}
 --- !u!1 &6201218999553557891
 GameObject:
   m_ObjectHideFlags: 0
