@@ -7,6 +7,8 @@ public class GroundTile : MonoBehaviour
     GroundSpawner groundSpawner;
     [SerializeField] GameObject tallObsticleSpawner;
     [SerializeField] float tallObsticleChance = .2f;
+    [SerializeField] GameObject Boss;
+    [SerializeField] float bossSpawnChance = .1f;
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
@@ -43,6 +45,11 @@ public class GroundTile : MonoBehaviour
             if(random<tallObsticleChance)
         {
             obsticleToSpawn = tallObsticleSpawner;
+        }
+            float boss = Random.Range(0f, 2f);
+        if (boss<bossSpawnChance)
+        {
+            obsticleToSpawn = Boss;
         }
 
         int randomSpawnIndex = Random.Range(6, 9);

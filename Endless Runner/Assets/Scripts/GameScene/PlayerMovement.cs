@@ -1,6 +1,8 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5;
 
     public Rigidbody rb;
+    public GameObject player;
 
     float horizontalInput;
 
@@ -17,8 +20,20 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedIncreasePerPoint = 0.1f;
 
-    public float JumpForce = 400;
+    public float JumpForce = 10f;
     [SerializeField] LayerMask groundMask;
+
+    public GameObject EndScene;
+
+    [SerializeField] GameManager gameManager;
+
+    public Text score;
+
+    public bool isJumping = false;
+    public bool comingDown = false;
+
+
+
 
 
 
@@ -34,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void Start()
+    {
+        Time.timeScale = 1f;
+        
+    }
+
 
 
 
@@ -43,29 +64,87 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+
+            float height = GetComponent<Collider>().bounds.size.y;
+            rb.AddForce(Vector3.up * JumpForce);
+
+
+
+
+            /*
+            if (isJumping == false)
+            {
+                isJumping = true;
+                player.GetComponent<Animator>().Play("Jump");
+
+               // StartCoroutine(jumpSequence());
+                float height = GetComponent<Collider>().bounds.size.y;
+                rb.AddForce(Vector3.up * JumpForce);
+            }*/
+            
 
         }
+
+        /*if(isJumping == true) 
+        {
+            if(comingDown == false)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * JumpForce, Space.World);
+            }
+            if (comingDown == true)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * -JumpForce, Space.World);
+            }
+
+
+        }*/
         
     }
+
+
+    /*IEnumerator jumpSequence()
+    {
+        yield return new WaitForSeconds(0.45f);
+
+        comingDown = true;
+        yield return new WaitForSeconds(0.45f);
+        isJumping = false;
+
+        comingDown = false;
+
+        player.GetComponent<Animator>().Play("Standard Run");
+
+
+    }*/
 
     public void Die()
     {
         isAlive = false;
+        Time.timeScale = 0f;
+
+        EndScene.SetActive(true);
+        score.text = "You're Score Was: " + gameManager.score.ToString();
 
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
 
     }
 
 
-    void Jump()
+
+
+
+
+    public void MainMenu()
     {
-        float height = GetComponent<Collider>().bounds.size.y;
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
-
-
-
-        rb.AddForce(Vector3.up * JumpForce);
+        SceneManager.LoadScene("MainMenu");
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
+
+    }
+
 }
