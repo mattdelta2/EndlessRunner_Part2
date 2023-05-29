@@ -92,6 +92,7 @@ public class GroundTile : MonoBehaviour
         for (int i = 0; i < powerUpToSpawn; i++)
         {
             GameObject temp = (Instantiate(PowerUps, transform));
+            temp.SetActive(true);
 
             temp.transform.position = getRandomPointInCollider(GetComponent<Collider>());
 

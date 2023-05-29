@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedIncreasePerPoint = 0.1f;
 
-    public float JumpForce = 10f;
+    public  float JumpForce = 10f;
     [SerializeField] LayerMask groundMask;
 
     public GameObject EndScene;
@@ -65,8 +65,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
 
-            float height = GetComponent<Collider>().bounds.size.y;
-            rb.AddForce(Vector3.up * JumpForce);
+            Jump();
 
 
 
@@ -127,6 +126,16 @@ public class PlayerMovement : MonoBehaviour
 
 
         
+
+    }
+
+    void Jump()
+    {
+        float height = GetComponent<Collider>().bounds.size.y;
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+
+
+        rb.AddForce(Vector3.up * JumpForce);
 
     }
 
